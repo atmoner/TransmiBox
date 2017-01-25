@@ -1,0 +1,33 @@
+{include file="header.html" title=foo}
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-header">Upload new torrent</h2>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+            {if !$smarty.get.h}
+			  <form method = "POST" enctype = "multipart/form-data">
+				 <input type = "file" name = "image" />
+				 <input type = "submit"/>
+ 
+			
+			  </form>
+			{else}
+			- Torrent name: {$resultTorrent.info.name}<br />
+			- Torrent hash: {$torrentHash}<br />
+			- Torrent content size: {$torrentBytestoSize}<br />
+			- {$torrentUrlname}
+			{/if}
+            </div>
+            <!-- /.row -->
+
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+{include file="footer.html"}    
